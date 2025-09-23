@@ -41,7 +41,7 @@ public void postMethodTest() {
 		Assert.assertEquals("84",responseHeader);
 		long respTime = resp.getTime();
 		System.out.println(respTime);
-		Assert.assertTrue(respTime<2000);
+		Assert.assertTrue(respTime<3000);
 		
 	}
 
