@@ -27,7 +27,7 @@ public void postMethodTest() {
 		request.contentType(ContentType.JSON);
 		Response resp = request.post("https://reqres.in/api/users");
 		
-		//LOG THE RESPONSE
+		//LOG THE RESPONSE. This will log complete response
 		resp.then().log().all();
 		
 		// Get an attribute from response body
