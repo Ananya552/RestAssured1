@@ -30,15 +30,20 @@ public void postMethodTest() {
 		//LOG THE RESPONSE
 		resp.then().log().all();
 		
+		// Get an attribute from response body
 		ResponseBody body = resp.getBody();
 		JsonPath jp=body.jsonPath();
 		String name = jp.getString("name");
 		Assert.assertEquals("morpheus",name);
+
+		// Get response code and validate it
 		int statusCode=resp.getStatusCode();
 		Assert.assertEquals(201,statusCode);
 		String responseHeader= resp.getHeader("Content-Length");
 		System.out.println(responseHeader);
 		Assert.assertEquals("84",responseHeader);
+
+		// Get response time and validate it
 		long respTime = resp.getTime();
 		System.out.println(respTime);
 		Assert.assertTrue(respTime<2000);
